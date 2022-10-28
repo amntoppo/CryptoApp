@@ -1,4 +1,4 @@
-package io.aman.cyptoapp.model
+package io.aman.cyptoapp.data.model
 
 data class CryptoHolding(
     val current_bal_in_token: String,

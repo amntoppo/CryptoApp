@@ -1,4 +1,4 @@
-package io.aman.cyptoapp.model
+package io.aman.cyptoapp.data.model
 
 data class CryptoModel(
     val all_transactions: List<AllTransaction>,

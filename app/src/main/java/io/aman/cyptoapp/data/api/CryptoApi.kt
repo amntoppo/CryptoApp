@@ -1,6 +1,6 @@
-package io.aman.cyptoapp
+package io.aman.cyptoapp.data.api
 
-import io.aman.cyptoapp.model.CryptoModel
+import io.aman.cyptoapp.data.model.CryptoModel
 import retrofit2.http.GET
 
 interface CryptoApi {

@@ -1,4 +1,4 @@
-package io.aman.cyptoapp.model
+package io.aman.cyptoapp.data.model
 
 data class CryptoPrice(
     val current_price_in_usd: String,

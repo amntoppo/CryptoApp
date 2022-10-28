@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:layout_gravity="center_vertical"
+    app:layout_anchorGravity="center_vertical"
+    android:theme="@style/ThemeOverlay.CyptoApp.FullscreenContainer"
+    tools:context=".view.MainActivity">
+
+
+    <Button
+        android:id="@+id/empty_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="383dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Empty" />
+
+    <Button
+        android:id="@+id/values_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="301dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="382dp"
+        android:layout_toStartOf="@+id/button"
+        android:layout_weight="1"
+        android:text="Value" />
+</LinearLayout>
