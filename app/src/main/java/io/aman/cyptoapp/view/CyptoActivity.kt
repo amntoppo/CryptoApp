@@ -57,12 +57,9 @@ class CryptoActivity : AppCompatActivity(), BuyCryptoListener {
                 layoutAccountDetails.subAmountText.visibility = View.VISIBLE
                 observeValueData()
             }
-
-
         }
-
-
     }
+
     fun observeEmptyData() {
         binding.apply {
             viewModel.getEmptyCryptoData().observe(this@CryptoActivity) {
@@ -74,10 +71,6 @@ class CryptoActivity : AppCompatActivity(), BuyCryptoListener {
                 currentPricesAdapter.submitList(it.crypto_prices)
             }
         }
-
-//        viewModel.getTransaction().observe(this@CryptoActivity) {
-//            transactionAdapter.submitList(it)
-//        }
         viewModel.TransactionsLiveData.observe(this) {
             transactionAdapter.submitList(it)
             transactionAdapter.notifyDataSetChanged()
@@ -113,19 +106,9 @@ class CryptoActivity : AppCompatActivity(), BuyCryptoListener {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBuyCryptoClick(item: CryptoHolding) {
-       // val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
-       // val currentDate = sdf.format(Date())
-        val niceDateStr: String = DateUtils.getRelativeTimeSpanString(
-            Date().time,
-            Calendar.getInstance().getTimeInMillis(),
-            DateUtils.MINUTE_IN_MILLIS
-        ) as String
-
-        val newTransaction: AllTransaction = AllTransaction(item.title + " Bought", item.current_bal_in_usd, item.logo,item.current_bal_in_token , Date().getTimeAgo())
+        val newTransaction = AllTransaction(item.title + " Bought", item.current_bal_in_usd, item.logo,item.current_bal_in_token , Date().getTimeAgo())
         viewModel.updateTransaction(newTransaction)
 
-       // transactionAdapter.submitList()
     }
 }

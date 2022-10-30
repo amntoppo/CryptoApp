@@ -3,5 +3,13 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="dollar_sign">$ %1$s</string>
+    <string name="empty">Empty</string>
+    <string name="value">Value</string>
+    <string name="crypto_holdings">Your Crypto Holdings</string>
+    <string name="recent_transactions">Recent Transactions</string>
+    <string name="current_prices">Current Prices</string>
+    <string name="buy">Buy</string>
+    <string name="deposit">Deposit</string>
+    <string name="crypto_account">Crypto Account</string>
 
 </resources>
