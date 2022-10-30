@@ -1,6 +1,11 @@
 <resources>
-    <declare-styleable name="FullscreenAttrs">
+    <declare-styleable name="CryptoAttrs">
         <attr name="fullscreenBackgroundColor" format="color" />
         <attr name="fullscreenTextColor" format="color" />
+        <attr name="cryptoBackgroundColor" format="color" />
+
+        <attr name="primaryTextColor" format="color" />
+        <attr name="secondaryTextColor" format="color" />
+
     </declare-styleable>
 </resources>
