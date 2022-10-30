@@ -9,7 +9,9 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp"
+    >
 
     <include
         android:id="@+id/layout_account_details"
@@ -47,10 +49,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/crypto_holding_recycler_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintTop_toBottomOf="@+id/crypto_holding_textview"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
     <View
         android:id="@+id/secondDivider"
@@ -90,8 +97,12 @@
         />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recent_transaction_recycler_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintTop_toBottomOf="@+id/recent_transaction_textview"
         app:layout_constraintStart_toStartOf="parent"
         />
@@ -116,6 +127,6 @@
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thirdDivider"
-        />git 
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
