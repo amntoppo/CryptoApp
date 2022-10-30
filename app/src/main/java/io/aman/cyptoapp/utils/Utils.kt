@@ -5,7 +5,10 @@ import coil.ImageLoader
 import coil.decode.SvgDecoder
 import coil.request.ImageRequest
 import io.aman.cyptoapp.R
-import retrofit2.Response.error
+
+const val EMPTY = "empty"
+const val VALUE = "value"
+
 
 fun ImageView.loadUrl(url: String) {
 

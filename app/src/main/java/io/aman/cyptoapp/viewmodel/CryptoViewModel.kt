@@ -19,10 +19,16 @@ class CryptoViewModel @Inject constructor(
     private val HoldingsLiveData = MutableLiveData<CryptoModel>()
     //val Holdingsdata: LiveData<CryptoHolding> = HoldingsLiveData
 
-    fun getHoldingList(): LiveData<CryptoModel> {
+    fun getValueCryptoData(): LiveData<CryptoModel> {
         viewModelScope.launch {
             val Holding = api.getCryptoData()
-            Log.e("holdingviewmodel", Holding.toString())
+            HoldingsLiveData.value = Holding
+        }
+        return HoldingsLiveData
+    }
+    fun getEmptyCryptoData(): LiveData<CryptoModel> {
+        viewModelScope.launch {
+            val Holding = api.getCryptoEmptyData()
             HoldingsLiveData.value = Holding
         }
         return HoldingsLiveData

@@ -9,6 +9,7 @@ import io.aman.cyptoapp.R
 import io.aman.cyptoapp.data.model.AllTransaction
 import io.aman.cyptoapp.data.model.CryptoPrice
 import io.aman.cyptoapp.databinding.LayoutCurrentPriceItemBinding
+import io.aman.cyptoapp.utils.loadUrl
 
 class CurrentPricesAdapter: ListAdapter<CryptoPrice, CurrentPricesAdapter.PricesViewHolder>(PricesComparator()) {
     override fun onCreateViewHolder(
@@ -31,6 +32,7 @@ class CurrentPricesAdapter: ListAdapter<CryptoPrice, CurrentPricesAdapter.Prices
             binding.apply {
                 coinName.text = currentItem.title
                 coinAmount.text = root.context.getString(R.string.dollar_sign, currentItem.current_price_in_usd)
+                iconImage.loadUrl(currentItem.logo)
             }
         }
     }
