@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import io.aman.cyptoapp.databinding.ActivityCryptoBinding
 import io.aman.cyptoapp.view.adapter.CryptoHoldingsAdapter
+import io.aman.cyptoapp.view.adapter.CurrentPricesAdapter
 import io.aman.cyptoapp.view.adapter.TransactionAdapter
 import io.aman.cyptoapp.viewmodel.CryptoViewModel
 
@@ -19,6 +20,7 @@ class CryptoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val cryptoHoldingsAdapter = CryptoHoldingsAdapter()
         val transactionAdapter = TransactionAdapter()
+        val currentPricesAdapter = CurrentPricesAdapter()
         super.onCreate(savedInstanceState)
         binding = ActivityCryptoBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -32,9 +34,14 @@ class CryptoActivity : AppCompatActivity() {
                 adapter = transactionAdapter
                 layoutManager = LinearLayoutManager(this@CryptoActivity)
             }
+            currentPricesRecyclerView.apply {
+                adapter = currentPricesAdapter
+                layoutManager = LinearLayoutManager(this@CryptoActivity, LinearLayoutManager.HORIZONTAL, false)
+            }
             viewModel.getHoldingList().observe(this@CryptoActivity) {
                 cryptoHoldingsAdapter.submitList(it.your_crypto_holdings)
                 transactionAdapter.submitList(it.all_transactions)
+                currentPricesAdapter.submitList(it.crypto_prices)
             }
         }
     }

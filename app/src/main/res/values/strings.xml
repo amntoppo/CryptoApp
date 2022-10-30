@@ -2,4 +2,6 @@
     <string name="app_name">CyptoApp</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dollar_sign">$ %1$s</string>
+
 </resources>

@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import io.aman.cyptoapp.R
 import io.aman.cyptoapp.data.model.AllTransaction
 import io.aman.cyptoapp.data.model.CryptoHolding
 import io.aman.cyptoapp.databinding.LayoutRecentTransactionsItemBinding
 import io.aman.cyptoapp.utils.loadUrl
+import kotlin.text.Typography.dollar
 
 class TransactionAdapter : ListAdapter<AllTransaction, TransactionAdapter.TransactionViewHolder>(TransactionComparator()) {
     override fun onCreateViewHolder(
@@ -31,7 +33,7 @@ class TransactionAdapter : ListAdapter<AllTransaction, TransactionAdapter.Transa
             binding.apply {
                 transactionTitle.text = currentItem.title
                 transactionTime.text = currentItem.txn_time
-                amountText.text = currentItem.txn_amount
+                amountText.text = root.context.getString(R.string.dollar_sign, currentItem.txn_amount)
                 subAmountText.text = currentItem.txn_sub_amount
                 transactionImage.loadUrl(currentItem.txn_logo)
             }
